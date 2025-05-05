@@ -123,6 +123,7 @@
     .max-icon {
       max-width: 20px;
     }
+
   </style>
 </head>
 <body>
@@ -166,7 +167,7 @@
           <td>2025-01-0<?= $i ?></td>
           <td>2025</td>
           <td>Author <?= $i ?></td>
-          <td><button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon"></button></td> <!-- E-Doc icon -->
+          <td><button style="border: none;" title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon"></button></td> <!-- E-Doc icon -->
           <td class="aksi-buttons">
             <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
             <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>

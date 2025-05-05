@@ -34,7 +34,7 @@
     }
 
     .breadcrumb a {
-      color: #28264A;
+      color:rgb(0, 0, 0);
       text-decoration: none;
     }
 
@@ -47,13 +47,18 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      width: 50%;
+      width: 94%; /* Set container width to 70% */
       margin: 0 auto;
+      display: flex;
+      flex-direction: column; /* Menggunakan satu kolom */
+      gap: 20px; /* Jarak antar elemen */
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
+    .form-column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
     }
 
     .form-group {
@@ -97,10 +102,13 @@
       background-color: #4030a5;
     }
 
-    /* Dropdown Select Styling */
-    select {
-      height: 40px;
+    /* Responsiveness untuk layar kecil */
+    @media screen and (max-width: 768px) {
+      .container {
+        gap: 15px; /* Mengurangi gap pada layar kecil */
+      }
     }
+
   </style>
 </head>
 
@@ -109,54 +117,55 @@
   <?php include '../../components/admin/header.php'; ?>
 
   <div class="content">
-    <div class="breadcrumb">
-      <a href="kelola_user.php"><i class="fas fa-user"></i> Kelola User</a> > <span>Tambah</span>
+    <div class="breadcrumb" style="margin-top: 20px; margin-left: 20px;">
+      <h2><a href="kelola_user.php" style=""><img src="../../asset/img/icon/black_user.png" alt="" style="max-width: 25px;"> Kelola User</a> > <span>Tambah</span></h2>
     </div>
 
     <div class="container">
-      <h2>Tambah User</h2>
 
       <form action="submit_form.php" method="POST">
-        <div class="form-group">
-          <label for="nama_pegawai">Nama Pegawai</label>
-          <select id="nama_pegawai" name="nama_pegawai" required>
-            <option value="">Pilih Nama Pegawai</option>
-            <option value="pegawai1">Pegawai 1</option>
-            <option value="pegawai2">Pegawai 2</option>
-            <option value="pegawai3">Pegawai 3</option>
-          </select>
-        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label for="nama_pegawai">Nama Pegawai</label>
+            <select id="nama_pegawai" name="nama_pegawai" required>
+              <option value="">Pilih Nama Pegawai</option>
+              <option value="pegawai1">Pegawai 1</option>
+              <option value="pegawai2">Pegawai 2</option>
+              <option value="pegawai3">Pegawai 3</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label for="role">Role</label>
-          <select id="role" name="role" required>
-            <option value="">Pilih Role</option>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-            <option value="staff">Staff</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label for="teknis">Teknis</label>
+            <select id="teknis" name="teknis" required>
+              <option value="">Pilih Teknis</option>
+              <option value="teknis1">Teknis 1</option>
+              <option value="teknis2">Teknis 2</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label for="teknis">Teknis</label>
-          <select id="teknis" name="teknis" required>
-            <option value="">Pilih Teknis</option>
-            <option value="teknis1">Teknis 1</option>
-            <option value="teknis2">Teknis 2</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Masukkan Username">
+          </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="text" id="password" name="password" required placeholder="Masukkan Password">
-        </div>
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+              <option value="">Pilih Role</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+              <option value="staff">Staff</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required placeholder="Masukkan Username">
-        </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" required placeholder="Masukkan Password">
+          </div>
 
-        <button type="submit" class="btn">Simpan</button>
+          <button type="submit" class="btn">Simpan</button>
+        </div>
       </form>
     </div>
   </div>
