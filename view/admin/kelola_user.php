@@ -173,10 +173,24 @@
           <td>pass<?= $i ?></td>
           <td><?= ($i % 2 == 0) ? 'Admin' : 'User' ?></td>
           <td class="aksi-buttons">
-          <button title="Edit" style="border: none;"><img src="../../asset/img/icon/edit.png" alt="" class="max-icon"></button>
-          <button title="Hapus" style="border: none;"><img src="../../asset/img/icon/delete.png" alt="" class="max-icon"></button>
-          <button title="Lihat" style="border: none;"><img src="../../asset/img/icon/lihat.png" alt="" class="max-icon"></button>
-          </td>
+    <!-- Tombol Edit dengan link menuju edit_user.php -->
+    <a href="edit_user.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+        <button style="border: none; background: none; cursor: pointer;">
+            <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+        </button>
+    </a>
+
+    <!-- Tombol Hapus -->
+    <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+        <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+    </button>
+
+    <!-- Tombol Lihat -->
+    <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+        <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+    </button>
+</td>
+
       </tr>
       <?php endfor; ?>
       </tbody>
