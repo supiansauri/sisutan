@@ -120,7 +120,7 @@
   <div class="content">
     <div class="breadcrumb" style="margin-top: 20px; margin-left: 20px;">
       <h2><a href="kelola_data_kegiatan.php" style="text-decoration: none;">
-        <img src="../../asset/img/icon/black_kelola_data.png" alt="" style="max-width: 25px;">
+        <img src="../../asset/img/icon/black_kelola_data.png" alt="" style="max-width: 20px;">
         Kelola Data Kegiatan
       </a> > <span>Edit</span></h2>
     </div>
