@@ -40,12 +40,8 @@
       text-align: center;
     }
     th {
-      text-align: center;
       background-color: #28264A;
       color: white;
-    }
-    th {
-      text-align: center;
     }
     tr:nth-child(even) {
       background-color: #f9f9f9;
@@ -118,7 +114,7 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button" style="margin-top: 10px;">+ Tambah</button>
+    <a href="tambah_teknis.php"><button class="down-button" onclick="showForm()" style="margin-top: 10px;">+Tambah</button></a>
 
     <!-- Data Teknis Table -->
     <table>
@@ -131,28 +127,40 @@
         </tr>
       </thead>
       <tbody>
-        <?php for ($i = 1; $i <= 5; $i++): ?>
-        <tr>
-          <td><?= $i ?></td>
-          <td>Statistik Sosial Kependudukan</td>
-          <td>02</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 1 ?></td>
-          <td>Statistik Distribusi</td>
-          <td>03</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <?php endfor; ?>
+        <?php 
+        $data_tekni = [
+          ['Statistik Sosial Kependudukan', '02'],
+          ['Statistik Distribusi', '03'],
+          ['Statistik Perekonomian', '04'],
+          ['Statistik Lingkungan', '05'],
+          ['Statistik Kesehatan', '06']
+        ];
+
+        foreach ($data_tekni as $i => $item): ?>
+          <tr>
+            <td><?= $i + 1 ?></td>
+            <td><?= $item[0] ?></td>
+            <td><?= $item[1] ?></td>
+            <td class="aksi-buttons">
+             <!-- Tombol Edit dengan link menuju edit_teknis.php -->
+    <a href="edit_teknis.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+        <button style="border: none; background: none; cursor: pointer;">
+            <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+        </button>
+    </a>
+
+    <!-- Tombol Hapus -->
+    <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+        <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+    </button>
+
+    <!-- Tombol Lihat -->
+    <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+        <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+    </button>
+</td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
 

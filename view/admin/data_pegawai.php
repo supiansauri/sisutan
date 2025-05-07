@@ -110,7 +110,7 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button" style="margin-top: 10px;">+ Tambah</button>
+    <a href="tambah_pegawai.php"><button class="down-button" onclick="showForm()" style="margin-top: 10px;">+Tambah</button></a>
 
     <!-- Data Pegawai Table -->
     <table>
@@ -131,10 +131,23 @@
           <td>12345678<?= $i ?></td>
           <td>Jabatan <?= $i ?></td>
           <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
+            <!-- Tombol Edit dengan link menuju edit_pegawai.php -->
+    <a href="edit_pegawai.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+        <button style="border: none; background: none; cursor: pointer;">
+            <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+        </button>
+    </a>
+
+    <!-- Tombol Hapus -->
+    <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+        <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+    </button>
+
+    <!-- Tombol Lihat -->
+    <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+        <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+    </button>
+</td>
         </tr>
         <?php endfor; ?>
       </tbody>

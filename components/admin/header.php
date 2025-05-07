@@ -67,7 +67,7 @@
         </ul>
       </li>
 
-      <li><a href="#"><img src="../../asset/img/icon/kelola_template.png" alt="" class="max-icon">Kelola Template</a></li>
+      <li><a href="kelola_template.php"><img src="../../asset/img/icon/kelola_template.png" alt="" class="max-icon">Kelola Template</a></li>
       <li><a href="logout.php"><img src="../../asset/img/icon/logout.png" alt="" class="max-icon">Keluar</a></li>
     </ul>
   </div>

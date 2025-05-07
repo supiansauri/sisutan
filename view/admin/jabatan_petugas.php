@@ -101,7 +101,7 @@
 
   <div class="main-content">
     <div class="title-view">
-      <h2><img src="../../asset/img/icon/jabatan_umum.png" alt="" class="max-icon"> Jabatan Petugas</h2>
+      <h2><img src="../../asset/img/icon/data_umum.png" alt="" class="max-icon"> Jabatan Petugas</h2>
     </div>
 
     <!-- Filter Bar -->
@@ -110,7 +110,7 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button" style="margin-top: 10px;">+ Tambah</button>
+    <a href="tambah_jabatan.php"><button class="down-button" onclick="showForm()" style="margin-top: 10px;">+Tambah</button></a>
 
     <!-- Jabatan Petugas Table -->
     <table>
@@ -123,35 +123,39 @@
         </tr>
       </thead>
       <tbody>
-        <?php for ($i = 1; $i <= 5; $i++): ?>
-        <tr>
-          <td><?= $i ?></td>
-          <td>PML</td>
-          <td>Petugas Pemeriksa Lapang</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 1 ?></td>
-          <td>PCL</td>
-          <td>PCL</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <!-- Add more rows as needed -->
-        <?php endfor; ?>
+        <?php 
+        $jabatan_petugas = [
+          ['PML', 'Petugas Pemeriksa Lapang'],
+          ['PCL', 'PCL']
+        ];
+
+        foreach ($jabatan_petugas as $i => $item): ?>
+          <tr>
+            <td><?= $i + 1 ?></td>
+            <td><?= $item[0] ?></td>
+            <td><?= $item[1] ?></td>
+            <td class="aksi-buttons">
+              <a href="edit_jabatan.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+                <button style="border: none; background: none; cursor: pointer;">
+                    <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+                </button>
+              </a>
+              <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+              </button>
+              <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+              </button>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
 
     <!-- Status Table -->
     <div class="title-view" style="margin-top: 40px;">
       <h3>Status (Digunakan untuk Pelatihan/Briefing)</h3>
+      <a href="tambah_status.php"><button class="down-button" style="margin-top: 10px;">+ Tambah</button></a>
     </div>
 
     <table>
@@ -164,29 +168,32 @@
         </tr>
       </thead>
       <tbody>
-        <?php for ($i = 1; $i <= 5; $i++): ?>
-        <tr>
-          <td><?= $i ?></td>
-          <td>Peserta</td>
-          <td>Peserta</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 1 ?></td>
-          <td>Narasumber</td>
-          <td>Narasumber</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <!-- Add more rows as needed -->
-        <?php endfor; ?>
+        <?php 
+        $status_pelatihan = [
+          ['Peserta', 'Peserta'],
+          ['Narasumber', 'Narasumber']
+        ];
+
+        foreach ($status_pelatihan as $i => $item): ?>
+          <tr>
+            <td><?= $i + 1 ?></td>
+            <td><?= $item[0] ?></td>
+            <td><?= $item[1] ?></td>
+            <td class="aksi-buttons">
+              <a href="edit_status.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+                <button style="border: none; background: none; cursor: pointer;">
+                    <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+                </button>
+              </a>
+              <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+              </button>
+              <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+              </button>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
 

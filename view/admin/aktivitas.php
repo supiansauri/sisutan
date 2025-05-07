@@ -80,16 +80,20 @@
     .max-icon {
       max-width: 20px;
     }
+
+    /* Menyusun ikon aksi di tengah */
     .aksi-buttons {
       display: flex;
       justify-content: center;
       gap: 10px;
     }
+
     .aksi-buttons button {
       border: none;
       background: none;
       cursor: pointer;
     }
+
     .aksi-buttons img {
       max-width: 20px;
     }
@@ -110,7 +114,7 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button" style="margin-top: 10px;">+ Tambah</button>
+    <a href="tambah_aktivitas.php"><button class="down-button" style="margin-top: 10px;">+ Tambah</button></a>
 
     <!-- Aktivitas Table -->
     <table>
@@ -122,62 +126,40 @@
         </tr>
       </thead>
       <tbody>
-        <?php for ($i = 1; $i <= 5; $i++): ?>
-        <tr>
-          <td><?= $i ?></td>
-          <td>Pelatihan Calon Petugas</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 1 ?></td>
-          <td>Updating/Listing</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 2 ?></td>
-          <td>Updating Direktori Perusahaan</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 3 ?></td>
-          <td>Pengolahan Hasil Pendataan</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 4 ?></td>
-          <td>Briefing Petugas</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <tr>
-          <td><?= $i + 5 ?></td>
-          <td>Focus Group Discussion</td>
-          <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
-          </td>
-        </tr>
-        <?php endfor; ?>
+        <?php 
+        $data_aktivitas = [
+          ['Pelatihan Calon Petugas'],
+          ['Updating/Listing'],
+          ['Updating Direktori Perusahaan'],
+          ['Pengolahan Hasil Pendataan'],
+          ['Briefing Petugas'],
+          ['Focus Group Discussion']
+        ];
+
+        foreach ($data_aktivitas as $i => $item): ?>
+          <tr>
+            <td><?= $i + 1 ?></td>
+            <td><?= $item[0] ?></td>
+            <td class="aksi-buttons">
+              <!-- Tombol Edit -->
+              <a href="edit_aktivitas.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+                <button style="border: none; background: none; cursor: pointer;">
+                    <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+                </button>
+              </a>
+
+              <!-- Tombol Hapus -->
+              <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+              </button>
+
+              <!-- Tombol Lihat -->
+              <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+              </button>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
 
