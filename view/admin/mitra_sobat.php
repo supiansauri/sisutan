@@ -40,7 +40,7 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button" style="margin-top: 10px;">+ Tambah</button>
+    <a href="tambah_mitra.php"><button class="down-button" style="margin-top: 10px;">+Tambah</button></a>
 
     <!-- Mitra Sobat Table -->
     <table>
@@ -63,9 +63,22 @@
           <td>123456789<?= $i ?></td>
           <td>Alamat Mitra <?= $i ?></td>
           <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
+             <!-- Tombol Edit dengan link menuju edit_mitra.php -->
+             <a href="edit_mitra.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+                <button style="border: none; background: none; cursor: pointer;">
+                    <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+                </button>
+            </a>
+
+            <!-- Tombol Hapus -->
+            <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+            </button>
+
+            <!-- Tombol Lihat -->
+            <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+            </button>
           </td>
         </tr>
         <?php endfor; ?>
