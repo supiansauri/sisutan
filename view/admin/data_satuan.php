@@ -61,7 +61,7 @@
     .filter-bar input[type="text"] {
       padding: 5px;
       font-size: 10px;
-      width: 40%;
+      
     }
     .filter-bar input[type="number"] {
       padding: 5px;

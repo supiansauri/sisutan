@@ -49,7 +49,7 @@
     .filter-bar input[type="text"] { 
       padding: 5px; 
       font-size: 10px; 
-      width: 40%; 
+      
     }
     .filter-bar input[type="number"] { 
       padding: 5px; 
@@ -99,14 +99,13 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button" style="margin-top: 10px;">+ Tambah</button>
+    <a href="tambah_lainnya.php"><button class="down-button" style="margin-top: 10px;">+Tambah</button></a>
 
     <!-- Mitra Lainnya Table -->
     <table>
       <thead>
         <tr>
           <th>NO</th>
-          <th>NO MITRA</th>
           <th>NAMA</th>
           <th>NIK</th>
           <th>ALAMAT</th>
@@ -118,15 +117,27 @@
         <?php for ($i = 1; $i <= 5; $i++): ?>
         <tr>
           <td><?= $i ?></td>
-          <td>Mitra <?= $i ?></td>
           <td>Nama Mitra <?= $i ?></td>
           <td>123456789<?= $i ?></td>
           <td>Alamat Mitra <?= $i ?></td>
           <td>Pekerjaan Mitra <?= $i ?></td>
           <td class="aksi-buttons">
-            <button title="Edit"><img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon"></button>
-            <button title="Hapus"><img src="../../asset/img/icon/delete.png" alt="Delete" class="max-icon"></button>
-            <button title="Lihat"><img src="../../asset/img/icon/lihat.png" alt="View" class="max-icon"></button>
+           <!-- Tombol Edit dengan link menuju edit_lainnya.php -->
+           <a href="edit_lainnya.php?id=<?= $i ?>" title="Edit" style="text-decoration: none;">
+                <button style="border: none; background: none; cursor: pointer;">
+                    <img src="../../asset/img/icon/edit.png" alt="Edit" class="max-icon">
+                </button>
+            </a>
+
+            <!-- Tombol Hapus -->
+            <button title="Hapus" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/delete.png" alt="Hapus" class="max-icon">
+            </button>
+
+            <!-- Tombol Lihat -->
+            <button title="Lihat" style="border: none; background: none; cursor: pointer;">
+                <img src="../../asset/img/icon/lihat.png" alt="Lihat" class="max-icon">
+            </button>
           </td>
         </tr>
         <?php endfor; ?>

@@ -16,7 +16,7 @@
     tr:nth-child(even) { background-color: #f9f9f9; }
     tr:nth-child(odd) { background-color: #ffffff; }
     .filter-bar { display: flex; align-items: center; gap: 10px; margin-top: 20px; justify-content: space-between; font-size: 10px; }
-    .filter-bar input[type="text"] { padding: 5px; font-size: 10px; width: 40%; }
+    .filter-bar input[type="text"] { padding: 5px; font-size: 10px; }
     .filter-bar input[type="number"] { padding: 5px; font-size: 10px; width: 40px; }
     .down-button { padding: 8px 39px; background-color: #513FC4; color: white; border: none; cursor: pointer; font-size: 12px; margin-right: 5px; border-radius: 5px; }
     .max-icon { max-width: 20px; }
