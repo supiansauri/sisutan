@@ -37,7 +37,7 @@
         <h1 style="font-style : italic;">BADAN PUSAT STATISTIK<br>KOTA SUKABUMI</h1>
       </div>
       <li><a href="beranda_user.php" class="<?= ($activePage == 'beranda user') ? 'active' : '' ?>"><img src="../../asset/img/icon/home.png" alt="" class="max-icon"> Beranda</a></li>
-      <li><a href="kelola_user.php" class="<?= ($activePage == 'buat dokumen') ? 'active' : '' ?>"><img src="../../asset/img/icon/white_edit.png" alt="" class="max-icon">Buat Dokumen</a></li>
+      <li><a href="buat_dokumen.php" class="<?= ($activePage == 'buat dokumen') ? 'active' : '' ?>"><img src="../../asset/img/icon/white_edit.png" alt="" class="max-icon">Buat Dokumen</a></li>
       <li><a href="logout.php"><img src="../../asset/img/icon/logout.png" alt="" class="max-icon">Keluar</a></li>
     </ul>
   </div>

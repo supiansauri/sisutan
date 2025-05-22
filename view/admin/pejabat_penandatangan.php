@@ -154,7 +154,7 @@
 
     <div class="filter-bar">
       <label>Tampilkan <input type="number" min="1" value="1"> data</label>
-      <input type="text" placeholder="Cari...">
+
     </div>
 
     <!-- Tabel Pejabat Pembuat Komitmen -->

@@ -38,7 +38,7 @@
       </div>
       <li><a href="beranda.php" class="<?= ($activePage == 'beranda') ? 'active' : '' ?>"><img src="../../asset/img/icon/home.png" alt="" class="max-icon"> Beranda</a></li>
       <li><a href="kelola_user.php" class="<?= ($activePage == 'kelola_user') ? 'active' : '' ?>"><img src="../../asset/img/icon/user.png" alt="" class="max-icon">Kelola User</a></li>
-      <li><a href="pejabat_penandatangan.php" class="<?= ($activePage == 'pejabat_penandatangan') ? 'active' : '' ?>"><img src="../../asset/img/icon/user.png" alt="" class="max-icon">Pejabat Penanda Tangan</a></li>
+      <li><a href="pejabat_penandatangan.php" class="<?= ($activePage == 'pejabat_penandatangan') ? 'active' : '' ?>"><img src="../../asset/img/icon/user.png" alt="" class="max-icon">PKK DAN DIPA</a></li>
       <li><a href="kelola_data_kegiatan.php" class="<?= ($activePage == 'kelola_data_kegiatan') ? 'active' : '' ?>"><img src="../../asset/img/icon/kelola_data.png" alt="" class="max-icon">Kelola Data Kegiatan</a></li>
       
       <li>

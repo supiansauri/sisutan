@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Daftar user (bisa dikembangkan nanti dari database)
+// Daftar user
 $users = [
     [
         'username' => 'admin',
@@ -21,13 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $authenticated = false;
 
-    // Cek apakah username dan password cocok
     foreach ($users as $user) {
         if ($input_username === $user['username'] && $input_password === $user['password']) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
 
-            // Arahkan ke halaman sesuai role
+            // Redirect sesuai role
             if ($user['role'] === 'admin') {
                 header("Location: admin/beranda.php");
             } else {
@@ -102,14 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-bottom: 8px;
         }
 
-        .login-role {
-            font-size: 14px;
-            font-weight: 600;
-            text-align: left;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
         .form-group {
             margin: 0px 0 20px;
             text-align: left;
@@ -153,23 +144,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #357ABD;
         }
 
-        .login-link {
-            margin-top: 10px;
-            font-size: 13px;
-            color: #333;
-        }
-
-        .login-link a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-
         .error-message {
             color: red;
             font-size: 14px;
@@ -194,10 +168,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <!-- Form Login -->
         <form method="POST" action="">
-            <input type="hidden" name="role" id="roleInput" value="user">
-
-            <div class="login-role" id="roleLabel">USER</div>
-
             <div class="form-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="username" placeholder="Username" required>
@@ -210,28 +180,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <button type="submit" class="btn">MASUK</button>
         </form>
-
-        <div class="login-link">
-            Masuk sebagai <span id="toggleText">Admin</span>? <a onclick="toggleRole()">Klik disini</a>
-        </div>
     </div>
-
-    <script>
-        function toggleRole() {
-            const roleLabel = document.getElementById('roleLabel');
-            const toggleText = document.getElementById('toggleText');
-            const roleInput = document.getElementById('roleInput');
-
-            if (roleLabel.textContent === 'USER') {
-                roleLabel.textContent = 'ADMIN';
-                toggleText.textContent = 'User';
-                roleInput.value = 'admin';
-            } else {
-                roleLabel.textContent = 'USER';
-                toggleText.textContent = 'Admin';
-                roleInput.value = 'user';
-            }
-        }
-    </script>
 </body>
 </html>

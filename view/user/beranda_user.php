@@ -145,7 +145,7 @@
       <input type="text" placeholder="Cari...">
     </div>
 
-    <button class="down-button">+Tambah</button>
+    <a href="buat_dokumen.php"><button class="down-button" onclick="showForm()" style="margin-top: 10px;">+Tambah</button></a>
 
     <table>
       <thead>
